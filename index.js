@@ -28,12 +28,12 @@ app.get("/api/hello", function(req, res) {
 app.get('/api/:date', (req, res) => {
 
   let date = null;
-  if(isNaN(req.params.date)) // date style YYYY-MM-DD
+  if (isNaN(req.params.date)) // date style YYYY-MM-DD
   {
     date = new Date(req.params.date);
     // ERROR: Invalid Date
     // we get a date with letters or other invalid format.
-    if(date == 'Invalid Date') {
+    if (date == 'Invalid Date') {
       res.json({ "error": "Invalid Date" })
     }
 
@@ -54,3 +54,5 @@ app.get('/api/:date', (req, res) => {
 var listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+// testing github - replit.
